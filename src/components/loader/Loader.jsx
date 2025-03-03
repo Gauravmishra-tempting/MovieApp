@@ -4,6 +4,7 @@ import './Loader.css';
 
 const Loader = () => {
   return (
+    <div className="loader-container">
 <div id="wifi-loader">
     <svg className="circle-outer" viewBox="0 0 86 86">
         <circle className="back" cx="43" cy="43" r="40"></circle>
@@ -19,6 +20,7 @@ const Loader = () => {
         <circle className="front" cx="17" cy="17" r="14"></circle>
     </svg>
     <div className="text" data-text="Searching"></div>
+</div>
 </div>
   )
 }

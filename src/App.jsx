@@ -1,17 +1,17 @@
 import './App.css';
 import { Suspense, lazy } from 'react';
-import { BrowserRouter, Route, Routes } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 
 
-const  MovieApp = lazy(() => import('./components/pages/MovieApp'));
+const Movie = lazy(() => import('./components/pages/movie'));
 
 function App() {
   return (
     <Suspense fallback={<Loader />}>
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={< MovieApp />} />
+        <Route path="/" element={< Movie />} />
       </Routes>
       </BrowserRouter>
     </Suspense>
