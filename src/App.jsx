@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 
 
-const Movie = lazy(() => import('./components/pages/movie'));
+const Movie = lazy(() => import('./components/pages/Movie'));
 
 function App() {
   return (
