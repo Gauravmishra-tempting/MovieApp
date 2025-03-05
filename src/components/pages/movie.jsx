@@ -112,7 +112,7 @@ const Movie = () => {
             </Col>
               ))
             ) : (
-              <h1 className='text-cneter'>No Movie Found</h1>
+              <h1 className='text-center'>No Movie Found</h1>
             )}
           </div>
     </div>
