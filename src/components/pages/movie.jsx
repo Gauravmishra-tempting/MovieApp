@@ -3,6 +3,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Pagination from 'react-bootstrap/Pagination';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -70,7 +71,7 @@ const Movie = () => {
     <div className="container">
     <form className="d-flex justify-content-center">
       <input type="text" 
-      className="form-control me-2 mt-5" 
+      className="form-control me-2 mt-5 w-md-50" 
       placeholder="Search for a movie" 
       style={{width: '800px'}}
       value={serachMovie}
@@ -92,12 +93,12 @@ const Movie = () => {
 
     <div className="container mt-5">
       <div className="row">
-            {currentMovies.length > 0 ? (
-              currentMovies.map((movie) => (
-        <div className="col" key={movie.id}>
-           <Card className="mb-5 shadow-lg" style={{ width: '18rem', height: '95%', display: 'flex', flexDirection: 'column' }}>
-              <Card.Img variant="top" src={movie.primaryImage}  />
-              <Card.Body>
+       {currentMovies.length > 0 ? (
+        currentMovies.map((movie) => (
+        <Col xs={12} sm={6} md={4} lg={3} key={movie.id} className="mb-4">
+           <Card className="h-100 shadow-lg">
+              <Card.Img variant="top" src={movie.primaryImage} className="img-fluid" />
+              <Card.Body className="d-flex flex-column">
                 <Card.Subtitle className="mb-2 text-muted">{movie.startYear}</Card.Subtitle>
                 <Card.Title>{movie.primaryTitle}</Card.Title>
                 <Card.Text>
@@ -108,10 +109,10 @@ const Movie = () => {
                 <Button href={movie.url} variant="primary">View on IMDb</Button>
               </Card.Body>
             </Card>
-            </div>
+            </Col>
               ))
             ) : (
-              <h1></h1>
+              <h1 className='text-cneter'>No Movie Found</h1>
             )}
           </div>
     </div>
