@@ -4,14 +4,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 
 
-const Movie = lazy(() => import('./components/pages/Movie'));
+
+const MovieApp = lazy(() => import('./components/pages/MovieApp'))
 
 function App() {
   return (
     <Suspense fallback={<Loader />}>
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={< Movie />} />
+        <Route path="/" element={< MovieApp />} />
       </Routes>
       </BrowserRouter>
     </Suspense>
