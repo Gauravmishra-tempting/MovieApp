@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 
 const Movie = () => {
   const api_key = process.env.REACT_APP_APIKEY;
+  const HOST_API_KEY = 'imdb236.p.rapidapi.com'; 
   const [movies, setMovie] = useState([]);
   const [serachMovie, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,7 +26,7 @@ const Movie = () => {
             method: 'GET',
             headers: {
               'x-rapidapi-key': api_key,
-              'x-rapidapi-host': 'imdb236.p.rapidapi.com'
+              'x-rapidapi-host': HOST_API_KEY,
             },
           }
         );
